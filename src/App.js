@@ -1,23 +1,25 @@
-import logo from './logo.svg';
-import './App.css';
+import "./App.css";
+import List from "./components/List";
+import Navbar from "./components/Navbar";
+import Boshsahifa from "./components/Boshsahifa";
+import Forum from "./components/Forum";
+import Maqola from "./components/Maqola";
+import Nazm from "./components/Nazm";
+import Nazr from "./components/Nazr";
+import { Routes, Route } from "react-router-dom";
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div className="App bg-neutral-950">
+      <Navbar/>
+      <Routes>
+        <Route path="/" element={<Boshsahifa />} />
+        <Route path="/forum" element={<Forum />} />
+        <Route path="/maqola" element={<Maqola />} />
+        <Route path="/nazm" element={<Nazm />} />
+        <Route path="/nazr" element={<Nazr />} />
+      </Routes>
+      <List />
     </div>
   );
 }
